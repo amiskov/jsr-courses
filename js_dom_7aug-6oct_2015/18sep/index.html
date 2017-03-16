@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="lodash.js"></script>
+</head>
+<body>
+<div id="grid-holder"></div>
+
+<script type="text/template" id="grid-template">
+<table>
+    <% users.forEach(function(user) { %>
+    <tr>
+        <td><%-user.name%></td>
+        <td><%-user.age%></td>
+    </tr>
+    <% }); %>
+</table>
+</script>
+<script>
+    var users = [
+        {name: "Вася", age: 10},
+        {name: "Петя", age: 15},
+        {name: "Женя", age: 20},
+        {name: "Маша", age: 25},
+        {name: "Даша", age: 30}
+    ];
+    var template = document.getElementById('grid-template').innerHTML;
+
+    var html = _.template(template)();
+    document.getElementById('grid-holder').innerHTML = html;
+</script>
+</body>
+</html>

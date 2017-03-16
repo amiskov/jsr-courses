@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <script src="../browser.min.js"></script>
+    <script type="text/babel">
+        let phrase = "Hello";
+        function sayHi(who) {
+            let message = `${phrase}, ${who}`; // This is template string, как %s в PHP
+        alert(message);
+        }
+        sayHi('test')
+
+
+
+        // Вопрос про замыкания
+        'use strict';
+        // window
+
+        let phrase = "Hello";
+
+        function sayHi(who) {
+            // LE={ who: "Вася" }
+            let message = `${phrase}, ${who}`;
+            // LE={ who: "Вася", message: ...}
+
+            alert(message);
+        }
+
+
+        setTimeout(function() {
+            let phrase = "Bye";
+
+            sayHi("Вася"); // Что выведет sayHi?
+
+        }, 1000);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
